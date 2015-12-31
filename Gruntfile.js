@@ -36,9 +36,7 @@ module.exports = function(grunt) {
           size: 2,
           backupDir: 'backup'
         },
-        files: {
-          'tmp/js-tab/**/*.js': ['test/fixtures/js-tab/**/*.js']
-        }
+        src: ['test/fixtures/js-tab/**/*.js']
       }
     },
 
