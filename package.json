@@ -1,7 +1,7 @@
 {
   "name": "grunt-convert-indent",
   "description": "Grunt task that converts ttab/space indention of files in entire project.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "homepage": "https://github.com/deopard/grunt-convert-indent",
   "author": {
     "name": "Tom Kim",
