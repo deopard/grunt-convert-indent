@@ -30,13 +30,20 @@ module.exports = function(grunt) {
 
     // Configuration to be run (and then tested).
     convertindent: {
-      convertAllJsTo2Spaces: {
+      spacify: {
         options: {
           style: 'space',
           size: 2,
           backupDir: 'backup'
         },
-        src: ['test/fixtures/js-tab/**/*.js']
+        src: ['test/testing/js-tab/**/*.js']
+      },
+
+      tabify: {
+        options: {
+          style: 'tab',
+        },
+        src: ['test/testing/js-space/**/*.js']
       }
     },
 
@@ -57,7 +64,7 @@ module.exports = function(grunt) {
 
   // Whenever the "test" task is run, first clean the "tmp" dir, then run this
   // plugin's task(s), then test the result.
-  // grunt.registerTask('test', ['clean', 'convertindent', 'nodeunit']);
+  grunt.registerTask('test', ['clean', 'convertindent', 'nodeunit']);
 
   // By default, lint and run all tests.
   // grunt.registerTask('default', ['jshint', 'test']);

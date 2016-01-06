@@ -1,13 +1,9 @@
-var a = 1;
-function b () {
-  c();
-  function c () {
-    console.log(a + "			");
-    d();
-    function d () {
-      console.log(a + "      ");
-    }
-  }
-}
-b();
-var a;
+var a = [1,2,3];
+_(a).map(function (n) {
+		return n + 1;
+	})
+	.filter(function (n) {
+		return (function () {
+			return n % 1 === 0;
+		})();
+	});

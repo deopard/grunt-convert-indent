@@ -24,10 +24,13 @@ module.exports = function(grunt) {
 
     this.files
       .forEach(function (file) {
+        console.log(file.src);
+
         file
           .src
           // filter only existing files
           .filter(function (src) {
+            console.log('filter check ', src);
             if (!grunt.file.exists(src)) {
               grunt.log.warn('Source file "' + src + '" not found.');
               return false;
@@ -50,7 +53,7 @@ module.exports = function(grunt) {
                 if (line) {
                   switch (options.style) {
                     case 'space':
-                      line = untabifyLine(line);
+                      line = spacifyLine(line);
                       break;
                     case 'tab':
                       line = tabifyLine(line);
@@ -77,7 +80,7 @@ module.exports = function(grunt) {
       );
     }
 
-    function untabifyLine (line) {
+    function spacifyLine (line) {
       var m = line.match(leadingWhiteSpace);
       m = m && m.length > 0 ? m[0] : null;
       var count = countSpaces(m);
